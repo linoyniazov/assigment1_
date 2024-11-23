@@ -1,8 +1,76 @@
 ###
+#add post
 POST http://localhost:3000/post
 Content-Type: application/json
 
 {
-    "content": "This is my first post",
-    "senderId": "12345"
+  "content": "This is the content of the sample post.",
+  "senderId": "12335"
 }
+
+###
+# Get All Posts
+GET http://localhost:3000/post
+
+###
+#Get Posts by Sender
+GET http://localhost:3000/post?sender=12335
+
+###
+# Get Post by ID
+GET http://localhost:3000/post/674205c28c1b9b208115cc74
+
+###
+# Update Post
+PUT http://localhost:3000/post/674205c28c1b9b208115cc74
+Content-Type: application/json
+
+{
+  "content": "Updated Post content",
+  "senderId": "UpdatedSender123"
+}
+
+
+
+###
+
+#create a comment
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+  "postId": "1234567890abcdef12345678",
+  "content": "This is a new comment.",
+  "senderId": "User12345"
+}
+
+###
+#get all comments
+
+GET http://localhost:3000/comments
+
+###
+
+#get comments by postId
+GET http://localhost:3000/comments?postId=1234567890abcdef12345678
+
+###
+
+#update a comment
+PUT http://localhost:3000/comments/6742160a095b0cada06a91cc
+Content-Type: application/json
+
+{
+  "content": "Updated comment content"
+}
+
+###
+
+#delet a comment
+DELETE http://localhost:3000/comments/6742160a095b0cada06a91cc
+
+
+
+
+
+
